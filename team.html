@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>فريق العمل | شركة الاتحاد</title>
+<meta name="description" content="فريق العمل في شركة الاتحاد للمقاولات العامة والاستثمار العقاري.">
+<meta name="theme-color" content="#101215">
+<link rel="icon" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#101215;
+  --panel:rgba(255,255,255,.035);
+  --gold:#D9B44A;
+  --gold-soft:#EBD494;
+  --text:#EDEDE7;
+  --soft:#C3C3BB;
+  --muted:#8E8E86;
+  --line:rgba(237,237,231,.13);
+  --radius:10px;
+  --font:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-ar:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  background-image:
+    linear-gradient(rgba(217,180,74,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(217,180,74,.045) 1px,transparent 1px),
+    radial-gradient(120% 55% at 50% 0%,#1C2027 0%,var(--bg) 60%);
+  background-size:46px 46px,46px 46px,100% 100%;
+  background-attachment:fixed;
+  color:var(--text);font-family:var(--font-ar);line-height:1.55;
+  padding:22px 20px 40px;display:flex;justify-content:center;
+}
+.wrap{width:100%;max-width:440px}
+
+.back{display:inline-flex;align-items:center;gap:7px;color:var(--muted);
+  text-decoration:none;font-size:13.5px;margin-bottom:18px}
+.back:hover{color:var(--gold)}
+
+.pagehead{text-align:center;margin-bottom:22px}
+.pagehead img{width:100%;max-width:210px;height:auto;margin:0 auto 16px;display:block;opacity:.95}
+.pagehead h1{font-size:20px;font-weight:600}
+.pagehead p{font-family:var(--font);font-size:10.5px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold);margin-top:6px}
+
+.search{position:relative;margin-bottom:24px}
+.search input{width:100%;height:48px;padding:0 44px 0 14px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  color:var(--text);font-family:var(--font-ar);font-size:14.5px}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{outline:none;border-color:rgba(217,180,74,.55)}
+.search svg{position:absolute;top:13px;inset-inline-end:14px;width:20px;height:20px;color:var(--muted)}
+
+/* ---- الإدارة العليا: تنسيق مميّز ---- */
+.lead-title{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.lead-title span{font-size:14px;font-weight:600;color:var(--gold);white-space:nowrap}
+.lead-title::after{content:"";flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(217,180,74,.5),transparent)}
+
+.lead{display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
+.lead .card{
+  position:relative;display:flex;align-items:center;gap:14px;
+  padding:16px 16px 16px 14px;border-radius:var(--radius);
+  border:1px solid rgba(217,180,74,.42);
+  background:linear-gradient(135deg,rgba(217,180,74,.13),rgba(217,180,74,.03) 55%,transparent);
+  box-shadow:0 8px 22px rgba(0,0,0,.32);
+}
+.lead .card::before{content:"";position:absolute;inset-inline-start:0;top:14px;bottom:14px;
+  width:3px;background:var(--gold);border-radius:2px}
+
+.lead h3{font-size:16.5px;font-weight:600;line-height:1.3}
+.lead .role{font-size:13.5px;color:var(--gold-soft);margin-top:2px}
+
+/* ---- بقية الفريق ---- */
+.dept{display:flex;align-items:center;gap:10px;margin:24px 0 10px}
+.dept b{font-size:13px;font-weight:600;color:var(--soft);white-space:nowrap}
+.dept i{font-style:normal;font-family:var(--font);font-size:11px;color:var(--muted)}
+.dept::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.person{display:flex;align-items:center;gap:13px;padding:12px 14px;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  margin-bottom:8px}
+
+.person h3{font-size:15px;font-weight:600}
+.person .role{font-size:12.5px;color:var(--muted);margin-top:1px}
+.info{flex:1;min-width:0}
+.info h3,.info .role{overflow-wrap:anywhere;white-space:normal}
+
+.badge{flex:0 0 auto;font-family:var(--font);font-size:11.5px;font-weight:500;
+  color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--line);
+  border-radius:20px;padding:3px 9px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.lead .badge{color:var(--gold-soft);border-color:rgba(217,180,74,.35);
+  background:rgba(217,180,74,.08)}
+
+.empty{text-align:center;color:var(--muted);font-size:14px;padding:30px 0}
+.count{font-family:var(--font);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);text-align:center;margin-top:6px}
+
+footer{text-align:center;color:var(--muted);font-size:12px;
+  border-top:1px solid var(--line);padding-top:18px;margin-top:32px}
+
+.wrap{max-width:720px}.pagehead{margin-top:16px}.pagehead h1{font-size:26px}.search input{padding:0 14px 0 44px}.person,.lead .card{align-items:center;padding:16px;gap:18px}.photo{position:relative;flex:0 0 72px;width:72px;height:88px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:linear-gradient(145deg,#252a31,#171b20);display:grid;place-items:center}.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.photo img[hidden]{display:none}.photo-placeholder{font-size:11px;color:var(--muted)}.lead .photo{width:88px;height:106px;flex-basis:88px;border-color:rgba(217,180,74,.35)}.badge{display:inline-block;margin-top:8px;font-size:11px;border-radius:5px;direction:ltr}.lead h3{font-size:20px}.person h3{font-size:17px}.person .role{font-size:14px;color:var(--soft)}.lead .role{font-size:15px}.count{font-family:var(--font-ar);letter-spacing:0;font-size:13px}.back:focus-visible{outline:2px solid var(--gold)}@media(max-width:380px){body{padding:18px 12px}.person,.lead .card{gap:12px;padding:12px}.photo{flex-basis:60px;width:60px;height:76px}.lead .photo{flex-basis:70px;width:70px;height:88px}.lead h3{font-size:18px}.person h3{font-size:16px}}
+.bot-link{display:flex;align-items:center;gap:12px;padding:14px 16px;margin:18px 0;color:var(--text);text-decoration:none;border:1px solid rgba(217,180,74,.4);border-radius:10px;background:rgba(217,180,74,.06);font-family:var(--font-ar);direction:rtl;text-align:right}.bot-link svg{width:24px;height:24px;color:var(--gold);flex-shrink:0}.bot-link>span:first-of-type{flex:1}.bot-link small{display:block;color:var(--muted);font-family:var(--font);font-size:12px;text-align:right}.bot-link:hover{background:rgba(217,180,74,.13)}.bot-link:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <a class="back" href="index.html">← العودة إلى الصفحة الرئيسية</a>
+
+  <div class="pagehead">
+    <img src="logo.png" alt="شركة الاتحاد">
+    <h1>فريق العمل</h1>
+    <p>Our team</p>
+  </div>
+
+  <div class="search">
+    <input id="q" aria-label="البحث في الموظفين" type="search" placeholder="ابحث بالاسم أو القسم أو الرقم الوظيفي…" autocomplete="off">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+  </div>
+
+  <noscript><p>يرجى تفعيل JavaScript لعرض قائمة الموظفين.</p></noscript>
+  <div id="out" aria-live="polite"></div>
+  <p class="count" id="count"></p>
+
+<a class="bot-link" href="https://t.me/ShibuyaLY_bot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3 10l7 3 3 7 8-17Z"/><path d="m10 13 6-5"/></svg><span>بوت شيبويا على تلجرام<small dir="ltr">@ShibuyaLY_bot</small></span><span aria-hidden="true">↗</span></a>
+  <footer>
+    <p>© <span id="yr"></span> شركة الاتحاد — للمقاولات العامة والاستثمار العقاري</p>
+  </footer>
+</main>
+
+<script src="employees.js?v=20260923-1"></script>
+  <script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const out = document.getElementById('out');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function card(p, lead){
+  const photo = p.photo || ('images/employees/' + p.id + '.jpg');
+  return `<article class="${lead ? 'card' : 'person'}">
+    <div class="photo"><span class="photo-placeholder" aria-hidden="true">صورة الموظف</span><img src="${esc(photo)}" alt="${esc(p.name)}" loading="lazy" onerror="this.hidden=true"></div>
+    <div class="info">
+      <h3>${esc(p.name)}</h3>
+      <p class="role">${esc(p.title || '')}</p>
+      <span class="badge" dir="ltr" aria-label="الرقم الوظيفي">${esc(p.id || '')}</span>
+    </div>
+  </article>`;
+}
+const normalize = s => String(s).toLowerCase().normalize('NFKC').replace(/[\u064B-\u065F\u0670ـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي').replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c));
+
+function render(filter){
+  const f = normalize(filter || '').trim();
+  const list = (typeof EMPLOYEES !== 'undefined' ? EMPLOYEES : []).filter(p =>
+    !f || normalize([p.name, p.title, p.dept, p.id].join(' ')).includes(f));
+
+  if(!list.length){
+    out.innerHTML = '<p class="empty">لا توجد نتائج مطابقة</p>';
+    document.getElementById('count').textContent = '';
+    return;
+  }
+
+  const leaders = list.filter(p => p.top);
+  const rest    = list.filter(p => !p.top);
+
+  let html = '';
+  if(leaders.length){
+    html += '<div class="lead-title"><span>الإدارة العليا</span></div><div class="lead">';
+    html += leaders.map(p => card(p, true)).join('');
+    html += '</div>';
+  }
+
+  const depts = [...new Set(rest.map(p => p.dept || 'أخرى'))];
+  depts.forEach(d => {
+    const members = rest.filter(p => (p.dept || 'أخرى') === d);
+    html += `<div class="dept"><b>${esc(d)}</b><i>${members.length}</i></div>`;
+    html += members.map(p => card(p, false)).join('');
+  });
+
+  out.innerHTML = html;
+  document.getElementById('count').textContent = list.length + ' موظف';
+}
+
+document.getElementById('q').addEventListener('input', e => render(e.target.value));
+render('');
+</script>
+</body>
+</html>
